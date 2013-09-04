@@ -63,6 +63,8 @@
 #                           Defaults to '/etc/mcollective/policies'.
 #   ['direct_addressing'] - Enable direct addressing.
 #                           Defaults to '0'.
+#   ['rpcauditprovider']      - The RPC audit plugin to use
+#                               Defaults to undef.
 #   ['registration']      - The registration plugin to use
 #                           Defaults to 'AgentList.
 #   ['registerinterval']  - Registration interval
@@ -119,6 +121,7 @@ class mcollective::node (
   $policies_dir = $mcollective::policies_dir,
   $direct_addressing = $mcollective::direct_addressing,
   $ssl_source_dir = $mcollective::ssl_source_dir,
+  $rpcauditprovider = $mcollective::rpcauditprovider,
   $registration = $mcollective::registration,
   $registration_collective = $mcollective::registration_collective,
   $registerinterval = $mcollective::registerinterval,

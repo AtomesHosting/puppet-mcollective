@@ -60,6 +60,12 @@ plugin.yaml = /etc/mcollective/facts.yaml
 
 classesfile = /var/lib/puppet/state/classes.txt
 
+<%- if scope.lookupvar('mcollective::node::rpcauditprovider') != :undef -%>
+# Audit
+rpcaudit = 1
+rpcauditprovider = <%= scope.lookupvar('mcollective::node::rpcauditprovider') %>
+<%- end -%>
+
 # Registration
 registerinterval = <%= scope.lookupvar('mcollective::node::registerinterval') %>
 registration = <%= scope.lookupvar('mcollective::node::registration') %>
